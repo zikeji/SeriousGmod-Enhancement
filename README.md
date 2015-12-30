@@ -6,6 +6,7 @@ This repo contains the current source to the SeriousGmod Enhancement Extension b
 Features
 -----
 * Redirect HTTP to HTTPS
+ * This also fixes the XenForo logout bug when you accidentally load the insecure site.
 * Display the current Steam username of a user in relevant areas.
 
 Planned
