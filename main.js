@@ -9,9 +9,6 @@
 
 var info = kango.getExtensionInfo();
 
-if (window.location.protocol != "https:")
-    window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
-
 var steamIDs = [];
 $('a[href*="http://steamcommunity.com/profiles/"] img[src="styles/default/steam/steam_16.png"]').parent().each(function(i, ele) {
     var t_arr = ele.href.split('/');
