@@ -4,7 +4,7 @@ kango.browser.addEventListener(kango.browser.event.BEFORE_NAVIGATE, function(eve
     if (url.hostname == 'www.seriousgmod.com') {
         if (url.protocol != 'https:') {
             url.protocol = 'https:';
-            event.target.navigate(url);
+            event.target.navigate(url.href);
         }
     }
 });
