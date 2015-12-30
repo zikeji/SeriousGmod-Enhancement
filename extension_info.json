@@ -1,9 +1,12 @@
 {
     "name": "SeriousGmod Enhancement",
-    "version": "0.1",
+    "version": "0.2.1",
     "description": "Various enhancements for the SeriousGmod Forums.",
     "creator": "Zikeji",
     "homepage_url": "https://github.com/zikeji/SeriousGmod-Enhancement",
+    "background_scripts": [
+        "fix.js"
+    ],
     "content_scripts": [
         "main.js"
     ],
@@ -12,9 +15,9 @@
         "xhr": ["https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/*"],
         "tabs": false,
         "context_menu": false,
-        "web_navigation": false,
+        "web_navigation": true,
         "notifications": false,
         "cookies": false
     },
-    "SteamAPIKey": "" //add your steam API key here
+    "SteamAPIKey": ""
 }
