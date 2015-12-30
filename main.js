@@ -14,11 +14,10 @@ if (window.location.protocol != "https:")
 
 var steamIDs = [];
 $('a[href*="http://steamcommunity.com/profiles/"] img[src="styles/default/steam/steam_16.png"]').parent().each(function(i, ele) {
-    t_arr = ele.href.split('/');
-    sID = t_arr[t_arr.length - 1];
+    var t_arr = ele.href.split('/');
+    var sID = t_arr[t_arr.length - 1];
     if ($.inArray(sID, steamIDs) === -1) steamIDs.push(sID);
 });
-
 kango.xhr.send({
     method: 'GET',
     url: 'https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' + info.SteamAPIKey + '&steamids=' + steamIDs.join(','),
@@ -26,9 +25,9 @@ kango.xhr.send({
 }, function(data) {
     if (data.status == 200 && data.response != null) {
         if (typeof data.response.response.players != "undefined") {
-            players = data.response.response.players
+            var players = data.response.response.players
             for (var i in players) {
-                player = players[i];
+                var player = players[i];
                 $('a[href="http://steamcommunity.com/profiles/' + player.steamid + '"] img[src="styles/default/steam/steam_16.png"]').css('vertical-align', '-3px');
                 $('a[href="http://steamcommunity.com/profiles/' + player.steamid + '"] img[src="styles/default/steam/steam_16.png"]').parent().append("&nbsp;(" + player.personaname + ")");
             }
